@@ -31,17 +31,11 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "plugins": [
-      "unused-imports"
-    ],
-    "rules": {
-      "unused-imports/no-unused-imports": "error"
-    }
-  },
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ]
+},
   "browserslist": {
     "production": [
       ">0.2%",
