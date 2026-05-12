@@ -1,6 +1,12 @@
 .App {
-  text-align: center;
+  
+  text-align: left;
+  /* padding-top: 24px;              
+  border-top: 1px solid #e5e7eb;  
+  background-color: #fff; */
 }
+
+
 
 .App-logo {
   height: 40vmin;
@@ -36,3 +42,9 @@
     transform: rotate(360deg);
   }
 }
+/* FORCE FULL WIDTH FOR ORDER PAGE */
+.order-page {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
