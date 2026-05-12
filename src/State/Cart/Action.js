@@ -1,4 +1,3 @@
-import { data } from "react-router-dom";
 import { api } from "../../config/apiConfig";
 import {
   ADD_ITEM_TO_CART_FAILURE,
