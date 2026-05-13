@@ -54,7 +54,8 @@ export default function Porduct() {
   const navigate = useNavigate();
   const param = useParams();
   const dispatch = useDispatch();
-  const { products } = useSelector(store => store);
+  const productState = useSelector((store) => store.products);
+  console.log("FULL PRODUCT STATE => ", productState);
 
 
   const decodedQueryString = decodeURIComponent(location.search);
@@ -124,6 +125,8 @@ const handlePaginationChange = (event, value) => {
   };
 
   useEffect(() => {
+console.log(param);
+console.log(param.lavelThree);
     const [minPrice, maxPrice] =
       priceValue === null ? [0, 0] : priceValue.split("-").map(Number);
       console.log("COLOR VALUE:", colorValue);
@@ -520,9 +523,7 @@ if (stock) {
               <div className="lg:col-span-4 w-full">
                 
                 <div className="flex flex-wrap justify-center bg-white py-5">
-                  {products.products?.content?.map((item, index) => {
-  
-
+                  {productState.products?.content?.map((item, index) => {
   return <ProductCard key={index} product={item} />;
 })}
                 </div>
@@ -532,7 +533,7 @@ if (stock) {
           <section className="w-full px=[3.6rem]">
             <div className="px-4 py-5 flex justify-center">
  <Pagination
-  count={products.products?.totalPages || 1}
+  count={productState.products?.totalPages || 1}
   page={currentPage}   // 🔥 THIS LINE FIXES YOUR ISSUE
   onChange={handlePaginationChange}
   color="secondary"
